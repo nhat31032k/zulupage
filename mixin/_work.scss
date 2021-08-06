@@ -1,0 +1,133 @@
+.work {
+    padding-top: 145px;
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 70px;
+    }
+    &-item {
+        padding: 40px 30px;
+        border: 1px solid $gray-light;
+        border-radius: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        line-height: 1.6;
+        &:hover {
+            border-color: transparent;
+            box-shadow: 0 0 50px 10px rgba(black, 0.03);
+        }
+    }
+    &-image {
+        margin-bottom: 35px;
+        max-height: 115px;
+    }
+    &-title {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+}
+
+.block {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 85px;
+    &-caption {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+        padding: 0 5px;
+        &:before {
+            left: 0;
+            transform: translatex(-100%);
+        }
+        &:after {
+            right: 0;
+            transform: translatex(100%);
+        }
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: $primary;
+            top: 50%;
+        }
+    }
+    &-caption--left {
+        padding-left: 40px;
+        margin-bottom: 30px;
+    }
+    //set cho nó mất cái gạch bên phải
+    &-caption--left::after {
+        display: none;
+    }
+    //set cho đường line không bị dịch chuyển
+    &-caption--left::before {
+        transform: none;
+    }
+    &-heading {
+        // text-transform: uppercase;
+        font-size: 50px;
+        line-height: 1.4;
+        span {
+            display: block;
+        }
+    }
+}
+
+.text {
+    font-weight: 300;
+    color: $gray-blur;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 1023px) {
+    .work {
+        &-list {
+            //cho rớt xuống hàng hoặc dùng flex cũng dc 
+            // display: block;
+            display: grid;
+            justify-content: flex-start;
+            grid-auto-columns: 450px;
+            grid-auto-flow: column;
+            grid-gap: 0 50px;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            grid-template-columns: unset;
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0;
+            }
+            &>* {
+                scroll-snap-align: start;
+            }
+        }
+        &-item {
+            width: 100%;
+            // max-width: 450px;
+            // margin: 0 auto 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .work {
+        &-list {
+            grid-auto-columns: 80%;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import'./mixin/mixin';
+@import'./mixin/color';
+@import'./mixin/baner';
+@import'./mixin/header';
+@import'./mixin/work';
+@import'./mixin/intro';
+@import'./mixin/plan';
+@import'./mixin/client';
+@import'./mixin/started';
+@import'./mixin/footer';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-size: 1.6rem;
+    // color: #262e36;
+    line-height: 1;
+    background-color: white;
+    color: $gray-dark;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    //do tính padding 2 bên 
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+//button
+.button {
+    border: 0;
+    font-size: 16px;
+    color: $gray-dark;
+    padding: 25px 45px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    &--primary {
+        color: white;
+        background-color: $primary;
+    }
+    &--outline {
+        border: 1px solid;
+        color: $gray-blur;
+    }
+}

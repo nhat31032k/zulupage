@@ -1,0 +1,47 @@
+.started {
+    max-width: 900px;
+    margin: 150px auto 70px;
+    border-radius: 20px;
+    background-color: #fbfbfb;
+    // height: 400px;
+    position: relative;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    // justify-content:center;
+    text-align: center;
+    flex-direction: column;
+    &-heading {
+        margin-bottom: 30px;
+    }
+    &-desc {
+        max-width: 245px;
+        margin-bottom: 50px;
+        color: $gray-blur;
+    }
+    &-comment {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+    }
+    &-smile {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+    *:not(img) {
+        position: relative;
+        z-index: 100;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .started {
+        margin-top: 0;
+        &-comment,
+        &-smile {
+            max-width: 20%;
+        }
+    }
+}
